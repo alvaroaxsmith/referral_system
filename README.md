@@ -11,18 +11,13 @@ The Referral System API is designed to facilitate a unique referral code generat
 
 ## Run
 
-- Run the application: `npm start`
-
-## Testing
-
-- Run tests: `npm test`
+- Run the application: `npm start` or `npm run dev` (development environment)
 
 ## Dependencies
 
 - Node.js (v14 or later)
 - Express
 - MySQL
-- TypeORM
 - Swagger
 
 ## Docker
