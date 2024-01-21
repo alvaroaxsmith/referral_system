@@ -59,14 +59,9 @@ import Purchase from './purchase.interface';
 const registerPurchase = async (req: Request, res: Response) => {
   try {
     const { product_name, person_name, indication_code }: Purchase = req.body;
-    console.log('Product name:', product_name);
-    console.log('Person name:', person_name);
-    console.log('Indication code:', indication_code);
     const result: Purchase = await purchaseService.registerPurchase(product_name, person_name, indication_code);
-    console.log('Purchase result:', result);
     res.status(201).json({ indication_code: result.indication_code });
   } catch (error) {
-    console.error('Error:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };

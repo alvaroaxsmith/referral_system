@@ -37,7 +37,6 @@ export default {
       const customers: Customer[] = await customerService.getCustomersWithPoints();
       res.status(200).json(customers);
     } catch (error) {
-      console.error(error);
       res.status(500).json({ error: 'Internal Server Error' });
     }
   },
@@ -78,12 +77,9 @@ export default {
   async getIndications(req: Request<{ properties: Customer }>, res: Response): Promise<void> {
     try {
       const personCode = req.params.properties.person_code;
-      console.log('From Customer/Person code:', personCode);
       const indications = await customerService.getIndicationsForPerson(personCode);
-      console.log('From Customer/Indications:', indications);
       res.status(200).json({ person_name: 'A', indications });
     } catch (error) {
-      console.error(error);
       res.status(500).json({ error: 'Internal Server Error' });
     }
   },
